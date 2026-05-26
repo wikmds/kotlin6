@@ -1,0 +1,25 @@
+### 1. Попытка получить премии без токена (должна быть ошибка 401)
+GET http://localhost:8080/prizes
+
+###
+
+### 2. Логин (получение токена)
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+###
+
+### 3. Получение всех премий (вставь токен из ответа выше вместо <TOKEN>)
+GET http://localhost:8080/prizes
+Authorization: Bearer <TOKEN>
+
+###
+
+### 4. Получение конкретной премии
+GET http://localhost:8080/prizes/2023/physics
+Authorization: Bearer <TOKEN>
